@@ -1,9 +1,12 @@
 const express = require('express');
-const { models } = require('mongoose');
-
+const cors = require ('cors')
 const router = express.Router();
 
+router.use(cors());
+
 //todas las rutas de los controllers
-router.use('/servicio',require ('../api/servicio/routes.js'));
+router.use('/servicio',require ('../api/servicio/servicio.routes.js'));
+router.use('/especialidad', require ('../api/especialidad/espacialidad.routes.js'))
+
 router.use ('/medico', require ('../api/medico/medico.routes.js'));
 module.exports= router;
