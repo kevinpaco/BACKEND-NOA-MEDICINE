@@ -6,7 +6,7 @@ const ServicioSchema = new Schema({
     nombre:{type:String, required:true},
     precio:{type:Number, required:true},
     descripcion:{type:String, required:true},
-    image:{type:String, required:true},
+    image:{type:String, required:false},
     especialidad:{type:mongoose.Schema.Types.ObjectId, ref:'Especialidad', required:true}
 })
 

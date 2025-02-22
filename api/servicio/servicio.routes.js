@@ -12,7 +12,7 @@ router.post("/", upload.single('image') ,servicioCtrl.postServicio);
 
 router.get("/:id",servicioCtrl.getServicio);
 
-router.put("/:id",upload.single('image'),servicioCtrl.putServicio);
+router.put("/",upload.single('image'),servicioCtrl.putServicio);
 
 router.delete("/:id",servicioCtrl.deleteServicio);
 

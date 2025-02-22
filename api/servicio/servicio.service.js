@@ -43,7 +43,7 @@ servicioSer.putServicio = async (servicioReq) => {
             const { filename } = servicioReq.file;
             updateData.setImage(filename);
         }
-        //await Servicio.updateOne({_id:servicioReq.body._id},updateData);
+        console.log(servicioReq.body)
         
         const servicioModificado = await Servicio.findByIdAndUpdate(servicioReq.body._id, updateData, { new: true });
 
@@ -68,9 +68,6 @@ servicioSer.deleteServicio=async(id)=>{
         const imageUrl = servicioAEliminar.image;
         const imageName = imageUrl.split('/').pop();
         const imagePath = path.join(__dirname, '../../storage/img_servicios/', imageName);
-         console.log("NOMBRE DE IMG: ");
-         console.log(imageName)
-         console.log(imagePath)
         fs.unlink(imagePath, (err) => {
             if (err) {
                 console.error('error al eliminar la imagen: ', err);
